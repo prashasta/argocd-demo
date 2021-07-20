@@ -1,0 +1,12 @@
+bases:
+  - ../../base
+
+namePrefix: prod-
+
+commonLabels:
+  env: prod
+
+patches:
+  - path: replica-count.yaml
+    target:
+      labelSelector: "app=nginx"
