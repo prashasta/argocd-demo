@@ -52,18 +52,26 @@ kubectl port-forward svc/argocd-server -n argocd 8443:443
 ```
 
 1. Create Repository
-2. Create Application with Manual Sync
+2. Create Application with Manual Sync (using manifests directory)
 3. Sync App
 4. Access App
-5. Auto Sync   
-6. Change replica count in src and commit
-7. Check cluster   
-8. Delete App
+5. Delete Pod   
+6. Auto Sync   
+7. Change replica count in src and commit
+8. Check cluster   
+9. Delete App
 
 
 ```
-kubectl port-forward svc/nginx -n default 8880:80
+kubectl port-forward svc/nginx -n default 8080:80
 ```
 
-argocd login <ARGOCD_SERVER>
-argocd account update-password
+# Combined demo
+1. Create Application with Manual Sync (using kustomize-demo/overlays/prod directory)
+2. Sync App
+3. Check cluster
+4. Delete App
+
+[comment]: <> (argocd login <ARGOCD_SERVER>)
+
+[comment]: <> (argocd account update-password)
